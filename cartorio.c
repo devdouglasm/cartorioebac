@@ -117,56 +117,67 @@ void deletar(void)
 
 int main(void)
 {
-
     int opcao = 0; // definindo variáveis
     int laco = 1;
 
-    for (laco = 1; laco == 1;)
-    {
+    char senhadigitada[10] = "a";
+    printf("### Cartório da EBAC ###\n\n");
+    printf("Login de administrador! Digite sua senha: ");
+    scanf("%s", senhadigitada);
 
-        system("clear");
+    if(strcmp(senhadigitada, "admin") == 0){
 
-        setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
-
-        printf("### Cartório da EBAC ###\n\n"); // inicio do menu
-        printf("Escolha a opção desejada do menu:\n\n");
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n");
-        printf("\t4 - Sair do programa\n\n\n");
-        printf("Opção: "); // fim do menu
-
-        scanf("%d", &opcao); // armanzenando a resposta do usuário;
-        getchar();
-
-        system("clear"); // limpar a tela (deletar msgs anteriores)
-
-        switch (opcao)
+        for (laco = 1; laco == 1;)
         {
-        case 1:
-            registrar(); // chamando a função registrar;
-            break;
 
-        case 2:
-            consultar(); // chamando a função consultar;
-            break;
+            system("clear");
 
-        case 3:
-            deletar(); // chamando a função deletar;
-            break;
+            setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
+
+            printf("### Cartório da EBAC ###\n\n"); // inicio do menu
+            printf("Escolha a opção desejada do menu:\n\n");
+            printf("\t1 - Registrar nomes\n");
+            printf("\t2 - Consultar nomes\n");
+            printf("\t3 - Deletar nomes\n");
+            printf("\t4 - Sair do programa\n\n\n");
+            printf("Opção: "); // fim do menu
+
+            scanf("%d", &opcao); // armanzenando a resposta do usuário;
+            getchar();
+
+            system("clear"); // limpar a tela (deletar msgs anteriores)
+
+            switch (opcao)
+            {
+            case 1:
+                registrar(); // chamando a função registrar;
+                break;
+
+            case 2:
+                consultar(); // chamando a função consultar;
+                break;
+
+            case 3:
+                deletar(); // chamando a função deletar;
+                break;
         
-        case 4:
-            printf("Você saiu do sistema!\n");
-            return 0;
-            getchar();
-            break;
+            case 4:
+                printf("Você saiu do sistema!\n");
+                return 0;
+                getchar();
+                break;
 
-        default:
-            printf("Essa opção não existe\n\n\n");
-            getchar();
-            break;
+            default:
+                printf("Essa opção não existe\n\n\n");
+                getchar();
+                break;
+            }
+
+            printf("Esse software foi desenvolvido por dmdev\n");
         }
-
-        printf("Esse software foi desenvolvido por dmdev\n");
+    }
+    else
+    {
+     printf("Senha incorreta");
     }
 }
